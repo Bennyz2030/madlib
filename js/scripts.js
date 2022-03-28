@@ -7,13 +7,12 @@ $(document).ready(function() {
     const exclamationInput = $("input#exclamation").val();
     const verbInput = $("input#verb").val();
     const nounInput = $("input#noun").val();
-
-    $(".person1").text(person1Input);
-    $(".person2").text(person2Input);
-    $(".animal").text(animalInput);
-    $(".exclamation").text(exclamationInput);
-    $(".verb").text(verbInput);
-    $(".noun").text(nounInput);
+    const outputArray = [person1Input, person2Input, animalInput, exclamationInput, verbInput, nounInput];
+  
+    outputArray.forEach(function(element, index) {
+      let final = $(".output" + index);
+      final.text(element);
+    });
 
     $("#story").show();
   });
